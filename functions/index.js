@@ -13,7 +13,7 @@ const {WebhookClient} = require("dialogflow-fulfillment");
 
 const db = admin.firestore();
 
-// Create the users collection if it doesn't exist
+/* // Create the users collection if it doesn't exist
 const usersCollection = db.collection("users");
 usersCollection
   .get()
@@ -29,7 +29,7 @@ usersCollection
   })
   .catch((error) => {
     console.error("Error creating users collection:", error);
-  });
+  }); */
 
 
 exports.dialogflowGateway = functions.https.onRequest((request, response) => {
@@ -49,63 +49,95 @@ exports.dialogflowGateway = functions.https.onRequest((request, response) => {
   });
 });
 
+
+
 exports.dialogflowWebhook = functions.https.onRequest(async (request, response) => {
-  const agent = new WebhookClient({request, response});
+  const agent = new WebhookClient({ request, response });
+  console.log(JSON.stringify(request.body));
+  const result = request.body.queryResult;
 
-  async function makeTransactionsHandler(agent) {
-    const {amount} = agent.parameters;
+  // FINANZAS
+  // Intent para obtener el saldo actual
+  async function obtenerSaldoActualHandler(agent) {
+    const db = admin.firestore();
+    const userID = '000001';
+    const profile = db.collection('users').doc(userID);
+    const userData = userDoc.data();
+    const currentBalance = userData.current_balance;
 
-    // Obtener la referencia del documento del usuario
-    const userRef = db.collection("users").doc("jeffd23");
+    let message = '';
 
-    try {
-      // Obtener el documento del usuario
-      const userDoc = await userRef.get();
-
-      if (userDoc.exists) {
-        const userData = userDoc.data();
-        const currentBalance = userData.balance;
-
-        if (currentBalance >= amount) {
-          const updatedBalance = currentBalance - amount;
-
-          // Actualizar el saldo del usuario
-          await userRef.update({balance: updatedBalance});
-
-          agent.add(`Transaction successful. Your updated balance is $${updatedBalance}.`);
-        } else {
-          agent.add(`Insufficient balance. Your current balance is $${currentBalance}.`);
-        }
-      } else {
-        agent.add("User data not found");
-      }
-    } catch (error) {
-      console.error("Error getting user document:", error);
-      agent.add(`An error occurred. Please try again later.`);
-    }
-  }
-
-  async function universityHandler(agent) {
-    // Perform financial coaching or answer finance-related questions based on the user's query
-  }
-
-  async function fraudDetectionHandler(agent) {
-    const {email} = agent.parameters;
-
-    // Verificar si el correo electrónico está en la colección de fraud_emails
-    const fraudListRef = db.collection("fraud_emails");
-    const fraudListSnapshot = await fraudListRef.where("email", "==", email).get();
-
-    if (fraudListSnapshot.empty) {
-      agent.add(`This email is not recognized as a known scam email.`);
+    if (currentBalance > 10000) {
+      message = `Tu saldo actual es de $${currentBalance}. ¡Excelente trabajo en mantener un saldo saludable en tu cuenta!`;
+    } else if (currentBalance >= 5000) {
+      message = `Tu saldo actual es de $${currentBalance}. Recuerda seguir ahorrando y controlando tus gastos para mantener un buen equilibrio financiero.`;
     } else {
-      agent.add(`Warning: This email is associated with known scams.`);
+      message = `Tu saldo actual es de $${currentBalance}. Te recomendaría revisar tus gastos y encontrar formas de ahorrar para fortalecer tu situación financiera.`;
     }
+    agent.add(message);
+  }
+  
+  // Intent para obtener el saldo actual
+  async function obtenerSaldoActualHandler(agent) {
+    const db = admin.firestore();
+    const userID = '000001';
+    const profile = db.collection('users').doc(userID);
+    const userData = userDoc.data();
+    const currentBalance = userData.current_balance;
+
+    let message = '';
+
+    if (currentBalance > 10000) {
+      message = `Tu saldo actual es de $${currentBalance}. ¡Excelente trabajo en mantener un saldo saludable en tu cuenta!`;
+    } else if (currentBalance >= 5000) {
+      message = `Tu saldo actual es de $${currentBalance}. Recuerda seguir ahorrando y controlando tus gastos para mantener un buen equilibrio financiero.`;
+    } else {
+      message = `Tu saldo actual es de $${currentBalance}. Te recomendaría revisar tus gastos y encontrar formas de ahorrar para fortalecer tu situación financiera.`;
+    }
+    agent.add(message);
   }
 
+  // Intent para calcular ahorro mensual
+  async function calcularAhorroMensualHandler(agent) {
+    const db = admin.firestore();
+    const userID = '000001';
+    const profile = db.collection('users').doc(userID);
+    const userData = userDoc.data();
+    const income = userData.income;
+  
+    let message = '';
+  
+    if (income > 10000) {
+      const savingsPercentage = 20; // Example: Saving 20% of income
+      const savingsAmount = (income * savingsPercentage) / 100;
+      message = `Según tus ingresos actuales, te sugiero ahorrar al menos el ${savingsPercentage}% de tus ingresos mensuales, lo que equivale a $${savingsAmount}. Esto te permitirá construir un fondo de emergencia y trabajar hacia tus metas financieras.`;
+    } else if (income >= 5000) {
+      const savingsPercentage = 10; // Example: Saving 10% of income
+      const savingsAmount = (income * savingsPercentage) / 100;
+      message = `Considerando tus ingresos actuales, sería recomendable destinar al menos el ${savingsPercentage}% de tus ingresos mensuales al ahorro, lo que representa aproximadamente $${savingsAmount}. Esto te ayudará a crear una base financiera sólida.`;
+    } else {
+      const savingsAmount = 100; // Example: Saving $100 per month
+      message = `Dado tus ingresos actuales, te recomendaría ahorrar lo máximo posible, aunque sea un monto pequeño, como $${savingsAmount} al mes. Cada ahorro cuenta y te ayudará a establecer buenos hábitos financieros.`;
+    }
+  
+    agent.add(message);
+  }
+  
+
+
+
+
+
+  //Mapa de intends
   let intentMap = new Map();
-  intentMap.set("MakeTransactions", makeTransactionsHandler);
-  intentMap.set("University", universityHandler);
-  intentMap.set("FraudDetection", fraudDetectionHandler);
-  agent.handleRequest(intentMap);
+  //Finance
+  intentMap.set("Finance_obtener_Saldo_Actual", obtenerSaldoActualHandler);
+  intentMap.set("", calcularAhorroMensualHandler);
+  //Transactions
+
+  //Frauds
+  
+  agent.handleRequest(intentMap)
+  
 });
+
