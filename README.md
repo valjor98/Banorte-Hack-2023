@@ -3,9 +3,10 @@
 ## Introduction
 
 ### Project Background
-This project was realized for Banorte, a leading Mexican bank, in it's 2023 24-hour Hackathon. Among 50 participants, we won first place and received a 40K MXN check. The project addresses the challenges faced by Banorte in the aftermath of the 2020-2022 pandemic. As digital banking surged due to health constraints, a significant shift back to physical banking was observed once restrictions eased. Our aim is to improve the hybrid human/digital banking infrastructure, particularly targeting young adults (18-29 years) and seniors (>60 years), who are currently underserved by the banking sector.
-![Receiving the first place award](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
-
+This project was realized for Banorte, a leading Mexican bank, in its 2023 24-hour Hackathon. Among 50 participants, we won first place and received a 40K MXN check. The project addresses the challenges faced by Banorte in the aftermath of the 2020-2022 pandemic. As digital banking surged due to health constraints, a significant shift back to physical banking was observed once restrictions eased. Our aim is to improve the hybrid human/digital banking infrastructure, particularly targeting young adults (18-29 years) and seniors (>60 years), who are currently underserved by the banking sector.
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/317b01ab-6f75-4fba-a748-26f16c6def54" width="450" title="Team receiving the first place award">
+</p>
 
 ### Problem Statement
 The project's goal is to optimize customer service channels by digitizing certain processes, relieving the strain on physical branches while enhancing the in-branch customer experience. Additionally, the project aims to increase inclusivity by catering to younger adults and seniors.
@@ -24,42 +25,49 @@ This repository originally only included the back-end. The front-end was in a pr
 Our solution is presented as a collection of three pillars that include both internal improvement factors (enhancements for the physical branches and mobile banking) as well as external strategies (for attracting and retaining customers). These pillars are digital banking, traditional banking, and hybrid banking.
 
 ### Digital Banking
-The digital banking solution proposes changes to digital channels (mobile banking and products intended for use outside physical locations). This includes a UI redesign, introduction of a virtual assistant, and emotion recognition for improved user experience.
+The digital banking solution proposes changes to digital channels (mobile banking and products intended for use outside physical locations). This includes a UI redesign, the introduction of a virtual assistant, and emotion recognition for improved user experience.
 
 ### UI Redesign
-A significant overhaul of the app’s UI has been proposed, which aims at modernizing the application’s appearance and making it more user-friendly without compromising current functionality. The design employs the 60-30-10 color palette technique, providing a pleasing perspective to the user.
-![Main Screen](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
-
+A significant overhaul of the app’s UI has been proposed, aiming to modernize the application’s appearance and make it more user-friendly without compromising current functionality. The design employs the 60-30-10 color palette technique, providing a pleasing perspective to the user.
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/687fe725-6a0c-4ff4-b6ab-78f74d34dba5" width="250" title="Chatbot">
+</p>
 
 ### Virtual Assistant - Sr. Banorte
-The integration of an AI virtual assistant, Sr. Banorte, within the mobile banking application aims to enhance user experience. Sr. Banorte is designed to provide financial coaching, learn and automate expenses, detect frauds, conduct transactions, and offer personalized communication based on user-specific characteristics. It was built using Google Cloud services and DialogFlow. 
-![Chat with the virtual assistant, Sr. Banorte](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
-
+The integration of an AI virtual assistant, Sr. Banorte, within the mobile banking application aims to enhance user experience. Sr. Banorte is designed to provide financial coaching, learn and automate expenses, detect fraud, conduct transactions, and offer personalized communication based on user-specific characteristics. It was built using Google Cloud services and DialogFlow. 
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/4e23fcef-feec-4499-b6d2-51bff046f0da" width="400" title="Chatbot">
+</p>
 
 ### Emotion Recognition for Enhanced User Experiences
 Banorte emphasized taking the user’s emotional state into account in our solution. Thus, we proposed a feature to recognize the user’s current emotional well-being when logging in with facial recognition. Due to time, we did not add a login system to the app, as it was a low priority and of low value. However, we added a stand-alone face recognition feature to showcase the proposal in _/face-recognition_.  
-![Emotion recognition demo](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
-
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/e8f1cda2-50ad-4272-b127-e463965a9424" width="650" title="Emotion recognition demo">
+</p>
 
 ### Hybrid Banking
-Our hybrid banking strategy, Banorte Generations, focuses on creating a direct link between traditional and digital banking. It aims to capture new customers across different demographics through the creation of three targeted campaigns - Banorte Youth, Banorte Lifetime, and Banorte University. We included different screens for these programs in the app. 
+Our hybrid banking strategy, Banorte Generations, focuses on creating a direct link between traditional and digital banking. It aims to capture new customers across different demographics by creating three targeted campaigns - Banorte Youth, Banorte Lifetime, and Banorte University. We included different screens for these programs in the app. These screens are informational more than anything.
 
 - **Banorte Youth**: The Banorte Youth campaign proposes a credit card, Banorte Young, for young adults. It's designed to retain customers beyond their use of the payroll card, incentivizing continued use of Banorte’s mobile banking services.
 
 - **Banorte Lifetime**: The Banorte Lifetime campaign targets older adults, offering extra security measures against phishing and providing exclusive intergenerational benefits.
 
 - **Banorte University**: Banorte University is an educational initiative offering users financial literacy resources.
-![Process of dividing payment among a group of people](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
-
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/43ca41b0-4c2a-4d89-8194-7bc5f20f3108" width="500" title="Screens">
+</p>
 
 ### Banorte Expense Management
 This feature allows you to create a group and effortlessly divide costs among members. Just input your expenses, specify the participants, and let the feature handle the calculations. It eliminates the need for manual calculations and spreadsheets, making the process of splitting bills hassle-free.
-![Process of dividing payment among a group of people](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
-
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/1bff9ada-b871-4820-a1c9-e927c3be3d72" width="800" title="Process of dividing payment among a group of people">
+</p>
 
 ### Tech Stack
-Here are the technologies used for the application.
-![Arquitecture](https://drive.google.com/file/d/1hLXQYBmCPpdYXgOuOi6pvJfCv2Fpwsje/view?usp=sharing)
+Here are the technologies used for the application. Banorte gave us the information that most of its user enters its webpage from their cellphone; Thus, we decided to use React, so it was compatible with cellphones and computers. DialogFlow was used to create the intents and the conversation flow with the user. Firebase was used to store data from the user when chatting with the chatbot.
+<p align="center">
+  <img src="https://github.com/valjor98/HackathonBan23/assets/76230623/973fb0c5-8ead-4b18-b800-cd7be9e8d97b" width="400" title="Architecture Diagram">
+</p>
 
 ### Deployment
 Link to deploy the application.
