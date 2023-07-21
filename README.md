@@ -71,3 +71,47 @@ Here are the technologies used for the application. Banorte gave us the informat
 
 ### Deployment
 Link to deploy the application.
+
+## Running the project locally
+To run this project, you will need to set up both the front-end and back-end servers on your local machine.
+
+### Front-end setup
+The front-end is built with React and TypeScript. To set up the front-end:
+
+- Clone the repository to your local machine.
+- Navigate to the front-end directory (cd /path-to-your-dir/front-end).
+- Install the dependencies by running ```npm install```.
+- Start the server by running npm start. The application will be available at ```http://localhost:3000```.
+
+### Back-end setup
+The back-end is built with DialogFlow and Firebase. To set up the back-end:
+- Clone the repository to your local machine.
+- Navigate to the back-end directory (cd /path-to-your-dir/back-end).
+- Start the server by running ```firebase deploy --only functions```. 
+
+### Installation and Run Instructions
+This project uses two main components, the front-end developed using React with TypeScript, and the back-end developed to run the DialogFlow chatbot. Follow the instructions below to set up and run the project locally.
+
+# Front-end (React with TypeScript)
+First, clone the repository to your local machine using git clone. Then:
+
+- Navigate to the root directory of the cloned repository.
+- Install the necessary dependencies using ```npm install```.
+- After the installation is complete, you can start the React application using ```npm start```.
+- The application should now be accessible via ```http://localhost:3000```.
+
+# Back-end (DialogFlow Chatbot)
+You will need to create a DialogFlow project. Here's a helpful guide to create a new DialogFlow project:
+
+- After setting up the DialogFlow project, you'll need to generate a service-account.json file from Google Cloud Console. This file contains the credentials that allow your back-end service to interact with the DialogFlow API.
+- Save the service-account.json in the root directory of your project. Please make sure to add service-account.json to your .gitignore file to prevent your credentials from being exposed publicly.
+- Install the necessary dependencies for the back-end with ```npm install```.
+- After the installation is complete, you can start the DialogFlow Chatbot function using ```firebase deploy --only functions```.
+
+Please remember to replace all placeholders in the .env file with your actual details, such as the project id and other necessary environmental variables.
+
+# Contributors
+This project exists thanks to all the people who contribute, my hackahton team. 
+
+# Contact
+If you want to contact me you can reach me at a00831133@tec.mx.
