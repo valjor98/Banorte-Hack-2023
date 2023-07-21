@@ -2,6 +2,24 @@
 
 ## Introduction
 
+# Table of Contents
+1. [Enhancing Banorte's Hybrid Banking Experience](#enhancing-banortes-hybrid-banking-experience)
+    1. [Introduction](#introduction)
+    2. [Proposed Solution](#proposed-solution)
+        1. [Digital Banking](#digital-banking)
+        2. [Hybrid Banking](#hybrid-banking)
+        3. [Banorte Expense Management](#banorte-expense-management)
+    3. [Tech Stack](#tech-stack)
+    4. [Running the project locally](#running-the-project-locally)
+        1. [Front-end setup](#front-end-setup)
+        2. [Back-end setup](#back-end-setup)
+    5. [Installation and Run Instructions](#installation-and-run-instructions)
+        1. [Front-end (React with TypeScript)](#front-end-react-with-typescript)
+        2. [Back-end (DialogFlow Chatbot)](#back-end-dialogflow-chatbot)
+    6. [Contributors](#contributors)
+    7. [Contact](#contact)
+
+
 ### Project Background
 This project was realized for Banorte, a leading Mexican bank, in its 2023 24-hour Hackathon. Among 50 participants, we won first place and received a 40K MXN check. The project addresses the challenges faced by Banorte in the aftermath of the 2020-2022 pandemic. As digital banking surged due to health constraints, a significant shift back to physical banking was observed once restrictions eased. Our aim is to improve the hybrid human/digital banking infrastructure, particularly targeting young adults (18-29 years) and seniors (>60 years), who are currently underserved by the banking sector.
 <p align="center">
@@ -89,10 +107,10 @@ The back-end is built with DialogFlow and Firebase. To set up the back-end:
 - Navigate to the back-end directory (cd /path-to-your-dir/back-end).
 - Start the server by running ```firebase deploy --only functions```. 
 
-### Installation and Run Instructions
+## Installation and Run Instructions
 This project uses two main components, the front-end developed using React with TypeScript, and the back-end developed to run the DialogFlow chatbot. Follow the instructions below to set up and run the project locally.
 
-# Front-end (React with TypeScript)
+### Front-end (React with TypeScript)
 First, clone the repository to your local machine using git clone. Then:
 
 - Navigate to the root directory of the cloned repository.
@@ -100,7 +118,7 @@ First, clone the repository to your local machine using git clone. Then:
 - After the installation is complete, you can start the React application using ```npm start```.
 - The application should now be accessible via ```http://localhost:3000```.
 
-# Back-end (DialogFlow Chatbot)
+### Back-end (DialogFlow Chatbot)
 You will need to create a DialogFlow project. Here's a helpful guide to create a new DialogFlow project:
 
 - After setting up the DialogFlow project, you'll need to generate a service-account.json file from Google Cloud Console. This file contains the credentials that allow your back-end service to interact with the DialogFlow API.
@@ -110,8 +128,8 @@ You will need to create a DialogFlow project. Here's a helpful guide to create a
 
 Please remember to replace all placeholders in the .env file with your actual details, such as the project id and other necessary environmental variables.
 
-# Contributors
+### Contributors
 This project exists thanks to all the people who contribute, my hackahton team. 
 
-# Contact
+### Contact
 If you want to contact me you can reach me at a00831133@tec.mx.
