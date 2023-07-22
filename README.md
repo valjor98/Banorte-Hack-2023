@@ -92,7 +92,7 @@ The back-end is built with DialogFlow and Firebase. To set up the back-end:
 ### Installation and Run Instructions
 This project uses two main components, the front-end developed using React with TypeScript, and the back-end developed to run the DialogFlow chatbot. Follow the instructions below to set up and run the project locally.
 
-# Front-end (React with TypeScript)
+### Front-end (React with TypeScript)
 First, clone the repository to your local machine using git clone. Then:
 
 - Navigate to the root directory of the cloned repository.
@@ -100,7 +100,7 @@ First, clone the repository to your local machine using git clone. Then:
 - After the installation is complete, you can start the React application using ```npm start```.
 - The application should now be accessible via ```http://localhost:3000```.
 
-# Back-end (DialogFlow Chatbot)
+### Back-end (DialogFlow Chatbot)
 You will need to create a DialogFlow project. Here's a helpful guide to create a new DialogFlow project:
 
 - After setting up the DialogFlow project, you'll need to generate a service-account.json file from Google Cloud Console. This file contains the credentials that allow your back-end service to interact with the DialogFlow API.
@@ -109,6 +109,12 @@ You will need to create a DialogFlow project. Here's a helpful guide to create a
 - After the installation is complete, you can start the DialogFlow Chatbot function using ```firebase deploy --only functions```.
 
 Please remember to replace all placeholders in the .env file with your actual details, such as the project id and other necessary environmental variables.
+
+### Testing
+The project counts with a testing suite. In order to run the tests, open the terminal and follow these instructions:
+- Install Cypress with ```npm install cypress```.
+- Open Cypress in the corresponding folder with ```npx cypress open```.
+- Follow the instructions, open Cypress in your desired browser, and look for the E2E tests. 
 
 # Contributors
 This project exists thanks to all the people who contribute, my hackahton team. 
