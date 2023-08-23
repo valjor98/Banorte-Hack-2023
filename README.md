@@ -11,15 +11,6 @@ This project was realized for Banorte, a leading Mexican bank, in its 2023 24-ho
 ### Problem Statement
 The project's goal is to optimize customer service channels by digitizing certain processes, relieving the strain on physical branches while enhancing the in-branch customer experience. Additionally, the project aims to increase inclusivity by catering to younger adults and seniors.
 
-### FYI
-This repository originally only included the back-end. The front-end was in a private repository. I added it here in order to submit the whole application for the MLH Fellowship. Below are my personal contributions to the project:
-- Front-end
-    - Expense Management
-    - Face-recognition 
-- Back-end
-    - Function
-    - DialogFlow integration
-    - Intends implementation
 
 ## Proposed Solution
 Our solution is presented as a collection of three pillars that include both internal improvement factors (enhancements for the physical branches and mobile banking) as well as external strategies (for attracting and retaining customers). These pillars are digital banking, traditional banking, and hybrid banking.
