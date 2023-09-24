@@ -108,7 +108,11 @@ The project counts with a testing suite. In order to run the tests, open the ter
 - Follow the instructions, open Cypress in your desired browser, and look for the E2E tests. 
 
 # Contributors
-This project exists thanks to all the people who contribute, my hackahton team. 
+- Narhari Olalde
+- Jorge Loredo
+- Daniel Loredo
+- Jorge Valdivia
+- Mauricio Portilla 
 
 # Contact
 If you want to contact me you can reach me at a00831133@tec.mx.
